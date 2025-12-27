@@ -11,15 +11,16 @@
     <div class="container">
         <header>
             <h1>Lexicon Master</h1>
-            <p>Master the art of high-level discourse.</p>
+            <p>Elevate your vocabulary with AI-powered logic checking.</p>
         </header>
 
         <main id="main-card" class="card">
             <div class="badge">Current Objective</div>
             <h2 id="current-word">Loading...</h2>
-            <p id="definition">Definition will load here...</p>
+            <p id="definition">Definition will appear here.</p>
             <div class="example-box">
-                <strong>Usage:</strong> <span id="word-example"></span>
+                <strong>Usage Example:</strong>
+                <p id="word-example"></p>
             </div>
             <div class="actions">
                 <button onclick="showSection('sentence')" class="btn">Sentence Practice</button>
@@ -31,21 +32,26 @@
         <section id="sentence-section" class="card hidden">
             <h3>Sentence Practice</h3>
             <p>Write a formal sentence using: <strong class="target-word"></strong></p>
-            <textarea id="user-sentence" placeholder="Your sentence..."></textarea>
-            <button onclick="checkAI('sentence')" id="check-btn" class="btn">Analyze Logic</button>
+            <textarea id="user-sentence" placeholder="Type your sentence here..."></textarea>
+            <div class="button-row">
+                <button onclick="checkAI('sentence')" id="check-btn" class="btn">Analyze Logic</button>
+                <button onclick="goBack()" class="link-btn">Return to Word</button>
+            </div>
             <div id="sentence-feedback" class="feedback"></div>
-            <button onclick="goBack()" class="link-btn">Back</button>
         </section>
 
         <section id="paragraph-section" class="card hidden">
             <h3>Story Synthesis</h3>
-            <p>Use your learned words: <span id="learned-list"></span></p>
-            <textarea id="user-paragraph" placeholder="Write your story..."></textarea>
-            <button onclick="checkAI('story')" id="story-btn" class="btn">Analyze Story</button>
+            <p>Words to include: <span id="learned-list" style="font-weight: bold; color: #b21f1f;"></span></p>
+            <textarea id="user-paragraph" placeholder="Weave your learned words into a short story..."></textarea>
+            <div class="button-row">
+                <button onclick="checkAI('story')" id="story-btn" class="btn">Analyze Story</button>
+                <button onclick="goBack()" class="link-btn">Return to Word</button>
+            </div>
             <div id="story-feedback" class="feedback"></div>
-            <button onclick="goBack()" class="link-btn">Back</button>
         </section>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>
